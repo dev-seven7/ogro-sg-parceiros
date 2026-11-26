@@ -63,7 +63,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 .ticket .tl{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-top:16px;color:#6b6157}
 .ticket .tv{font-family:var(--display);font-size:clamp(54px,13vw,76px);line-height:1;margin:4px 0 2px}
 .ticket .tv small{font-size:.42em;color:var(--red);margin-left:4px}
-.ticket .tn{font-size:13px;color:#4e453c}
+.ticket .tn{font-size:13px;color:#4e453c}.ticket .tn b{color:var(--red)}
 .ticket .bar{height:24px;margin-top:16px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 14px)}
 .tape{position:absolute;left:-5%;right:-5%;bottom:30px;background:var(--red);transform:rotate(-2deg);overflow:hidden;border-top:2px solid var(--red-deep);border-bottom:2px solid var(--red-deep)}
 .tape .run{display:flex;width:max-content;animation:run 38s linear infinite}
@@ -203,10 +203,10 @@ footer p{margin-top:18px;font-size:13px;color:var(--txt-3);letter-spacing:.14em;
     <div class="ticket" aria-label="Resumo do investimento">
       <div class="tt"><span>Investimento</span><span class="red">Influência</span></div>
       <div class="tl">Pacotes NitDicas + SG pro Mundo</div>
-      <div class="tv">R$ 4.700<small>a 5.100</small></div>
-      <div class="tn">+ deslocamento do NitDicas · dividido entre 3 ou 4 marcas</div>
+      <div class="tv">R$ 4.700</div><div class="tn"><b>ou R$ 5.100</b> com a Lang's no SG pro Mundo</div>
+      <div class="tn">+ deslocamento do NitDicas</div>
       <div class="tl">Teto com a base de parceiros</div>
-      <div class="tv">R$ 7.150<small>a 7.750</small></div>
+      <div class="tv">R$ 7.150</div><div class="tn"><b>ou R$ 7.750</b> no cenário com 4 marcas</div>
       <div class="bar"></div>
     </div>
   </div>
