@@ -173,6 +173,41 @@ footer .big{font-family:var(--display);text-transform:uppercase;font-size:clamp(
 footer .big .r{color:var(--red-hot)}
 footer p{margin-top:18px;font-size:13px;color:var(--txt-3);letter-spacing:.14em;text-transform:uppercase}
 .hand{font-family:var(--hand);color:var(--kraft);font-size:clamp(18px,2.2vw,22px);transform:rotate(-2deg);display:inline-block;margin-top:22px}
+
+/* abas */
+.tabs{position:sticky;top:58px;z-index:49;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:6px;overflow-x:auto}
+.tabs button{appearance:none;background:none;border:0;border-bottom:3px solid transparent;color:var(--txt-3);font-family:var(--display);font-size:clamp(16px,2.2vw,20px);letter-spacing:.06em;text-transform:uppercase;padding:14px 14px 11px;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--red-hot)}
+.tabs button:focus-visible{outline:2px solid var(--kraft);outline-offset:-2px}
+.tab[hidden]{display:none}
+/* impressos */
+.prints{display:grid;gap:22px}
+@media (min-width:760px){.prints{grid-template-columns:repeat(2,1fr)}}
+.print{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.35);display:flex;flex-direction:column}
+.print .ph{background:var(--paper-2);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;gap:10px;padding:16px}
+.print .ph img{max-height:100%;width:auto;object-fit:contain;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);border-radius:3px}
+.print .ph.two img{max-width:48%}
+.print .ph.stack{flex-direction:column;background:#fff}
+.print .ph.stack img{max-height:48%;box-shadow:none}
+.print .ph .empty{font-family:var(--hand);color:#6b6157;font-size:18px;text-align:center}
+.print .pb{padding:20px 22px 22px}
+.print h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:26px;line-height:1.05}
+.print .spec{font-size:14px;color:#4e453c;margin-top:4px}
+.print .q{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;border-top:2px solid var(--ink);padding-top:10px}
+.print .q span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#6b6157}
+.print .q b{font-family:var(--display);font-weight:400;font-size:30px;color:var(--ink)}
+.print .alt{font-size:13px;color:var(--red);margin-top:4px}
+.gifts{display:grid;gap:14px}
+@media (min-width:860px){.gifts{grid-template-columns:1fr 1fr}}
+.gift{border:1px solid var(--line);border-radius:6px;padding:22px;background:rgba(255,255,255,.02)}
+.gift .tagx{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;border-radius:3px;padding:3px 8px}
+.gift .ok{background:var(--kraft);color:var(--ink)}
+.gift .tv2{background:var(--red);color:#fff}
+.gift h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:24px;margin-top:10px;line-height:1.05}
+.gift p{font-size:15px;color:var(--txt-2);margin-top:8px}
+.gift .gv{font-family:var(--display);font-size:28px;color:var(--red-hot);margin-top:10px}
+.gift.full{grid-column:1/-1}
 </style>
 </head>
 <body>
@@ -180,14 +215,18 @@ footer p{margin-top:18px;font-size:13px;color:var(--txt-3);letter-spacing:.14em;
 <header class="top">
   <div class="wrap">
     <img src="img/ogro-negativo.svg" alt="Ogro Steaks">
-    <nav>
-      <a href="#total">Investimento</a>
-      <a href="#pacotes">Pacotes</a>
-      <a href="#base">Outros parceiros pagos</a>
-    </nav>
     <span class="date">04.12 · SG</span>
   </div>
 </header>
+
+<div class="tabs" role="tablist" aria-label="Seções">
+  <div class="wrap">
+    <button role="tab" id="t-parceiros" aria-controls="tab-parceiros" aria-selected="true" data-tab="parceiros">Parceiros</button>
+    <button role="tab" id="t-impressos" aria-controls="tab-impressos" aria-selected="false" data-tab="impressos">Impressos e brindes</button>
+  </div>
+</div>
+
+<main id="tab-parceiros" class="tab" role="tabpanel" aria-labelledby="t-parceiros">
 
 <section class="hero">
   <div class="wrap">
@@ -339,6 +378,99 @@ footer p{margin-top:18px;font-size:13px;color:var(--txt-3);letter-spacing:.14em;
   </div>
 </section>
 
+</main>
+
+<main id="tab-impressos" class="tab" role="tabpanel" aria-labelledby="t-impressos" hidden>
+<section class="s">
+  <div class="wrap">
+    <div class="sh">
+      <span class="n">01</span>
+      <span class="ey">Impressos · orçamento de gráfica</span>
+      <h2>O kit que vai <span class="r">na sacola</span></h2>
+      <p class="lead">As artes foram aprovadas pelo Jimmy e pelo Igor e já estão finalizadas. Só falta mandar pra gráfica, com entrega até <strong>quarta, 02/12</strong>.</p>
+    </div>
+    <div class="board">
+      <div><div class="l">Impressos</div><div class="v">R$ 1.246</div><div class="d">ou R$ 1.326 com 2.500 panfletos</div></div>
+      <div><div class="l">Ecobags · a aprovar</div><div class="v">R$ 945</div><div class="d">50 unidades, primeiros 50 pedidos</div></div>
+      <div class="hi"><div class="l">Impressos + ecobags</div><div class="v">R$ 2.191</div><div class="d">ou R$ 2.271 com 2.500 panfletos</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s light">
+  <div class="wrap">
+    <div class="sh">
+      <span class="n">02</span>
+      <span class="ey">As peças</span>
+      <h2>Quantidade e <span class="r">valor</span></h2>
+    </div>
+    <div class="prints">
+      <article class="print">
+        <div class="ph two" data-art="panfleto"><img src="img/panfleto-frente.jpg" alt="Panfleto Ogro SG, frente" loading="lazy"><img src="img/panfleto-verso.jpg" alt="Panfleto Ogro SG, verso com cupom OGRO10" loading="lazy"></div>
+        <div class="pb">
+          <h3>Panfleto</h3>
+          <div class="spec">10×14 cm · frente e verso · couchê 115g · cupom OGRO10</div>
+          <div class="q"><span>1.000 unidades</span><b>R$ 220</b></div>
+          <div class="alt">ou 2.500 unidades por R$ 300</div>
+        </div>
+      </article>
+      <article class="print">
+        <div class="ph stack" data-art="retrovisor"><img src="img/retrovisor-1.jpg" alt="Cartão de retrovisor, versão 1" loading="lazy"><img src="img/retrovisor-2.jpg" alt="Cartão de retrovisor, versão 2" loading="lazy"></div>
+        <div class="pb">
+          <h3>Cartão de retrovisor</h3>
+          <div class="spec">Dobrável, abre e fecha · 2 versões · cupom OGRO10 · distribuído nos carros da região</div>
+          <div class="q"><span>250 unidades</span><b>R$ 256</b></div>
+        </div>
+      </article>
+      <article class="print">
+        <div class="ph" data-art="ima"><img src="img/ima.jpg" alt="Ímã de geladeira Ogro SG" loading="lazy"></div>
+        <div class="pb">
+          <h3>Ímã de geladeira</h3>
+          <div class="spec">7×5 cm · com QR do site</div>
+          <div class="q"><span>300 unidades</span><b>R$ 270</b></div>
+        </div>
+      </article>
+      <article class="print">
+        <div class="ph"><img src="img/cartela-adesivos.jpg" alt="Cartela de adesivos da Ogro Steaks" loading="lazy"></div>
+        <div class="pb">
+          <h3>Cartela de adesivos</h3>
+          <div class="spec">A5 · mesmo modelo do evento da Corrida do Pelé</div>
+          <div class="q"><span>200 unidades</span><b>R$ 500</b></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="wrap">
+    <div class="sh">
+      <span class="n">03</span>
+      <span class="ey">Brindes</span>
+      <h2>O que faz <span class="r">voltar</span></h2>
+    </div>
+    <div class="gifts">
+      <div class="gift full">
+        <span class="tagx ok">Já fechado</span>
+        <h3>Kit dos 200 primeiros pedidos</h3>
+        <p>Os 200 primeiros pedidos recebem um ímã, um panfleto e uma cartela de adesivos.</p>
+      </div>
+      <div class="gift">
+        <span class="tagx tv2">Pra validar</span>
+        <h3>Vale "1 mês de Ogro"</h3>
+        <p>Pra influenciadores e parceiros: 4 pedidos, 1 por semana, com 1 combo disponível (combinado com a Estratégia). Gera buzz nas semanas depois do lançamento.</p>
+      </div>
+      <div class="gift">
+        <span class="tagx tv2">Pra validar</span>
+        <h3>Ecobag nos primeiros 50 pedidos</h3>
+        <p>A aprovar dentro do nosso budget. O fornecedor já entregou ecobag pra gente em prazo curto.</p>
+        <div class="gv">50 un · R$ 945</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer>
   <div class="wrap">
     <div class="big">São Gonçalo,<br>a fome agora <span class="r">tem nome.</span></div>
@@ -347,5 +479,16 @@ footer p{margin-top:18px;font-size:13px;color:var(--txt-3);letter-spacing:.14em;
   </div>
 </footer>
 
+<script>
+(function(){
+  var btns=document.querySelectorAll('.tabs button');
+  function show(name){
+    btns.forEach(function(b){var on=b.dataset.tab===name;b.setAttribute('aria-selected',on);document.getElementById('tab-'+b.dataset.tab).hidden=!on;});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.tab);history.replaceState(null,'','#'+b.dataset.tab);window.scrollTo({top:0});});});
+  var h=location.hash.replace('#','');
+  if(h==='impressos'||h==='parceiros')show(h);
+})();
+</script>
 </body>
 </html>
